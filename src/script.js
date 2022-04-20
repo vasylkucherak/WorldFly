@@ -1,10 +1,12 @@
 'use strict';
 
 window.onload = function() {
-    const promo = document.querySelector('.promo');
+    const parallax = document.querySelector('.parallax');
 
-    if (promo) {
-        const content = document.querySelector('.promo__content');
+    if (parallax) {
+
+        // Parallax on mousemove
+
         const bg = document.querySelector('.img-parallax__bg');
         const cloud3 = document.querySelector('.img-parallax__cloud3');
         const cloud2 = document.querySelector('.img-parallax__cloud2');
@@ -16,13 +18,16 @@ window.onload = function() {
         const middle2 = document.querySelector('.img-parallax__middle2');
         const middle1 = document.querySelector('.img-parallax__middle1');
         const front = document.querySelector('.img-parallax__front');
+        const topBg = document.querySelector('.img-parallax__top-bg');
+        const bottomBg = document.querySelector('.img-parallax__bottom-bg');
 
-        const forBg = 50;
-        const forCloud3 = 45;
-        const forCloud2 = 40;
-        const forCloud1 = 35;
-        const forBack2 = 30;
-        const forBack1 = 25;
+
+        const forBg = 45;
+        const forBack2 = 40;
+        const forBack1 = 35;
+        const forCloud3 = 30;
+        const forCloud2 = 25;
+        const forCloud1 = 20;
         const forLake = 21;
         const forMiddle3 = 21;
         const forMiddle2 = 18;
@@ -52,20 +57,43 @@ window.onload = function() {
             middle2.style.cssText = `transform: translate(${positionX / forMiddle2}%,${positionY / forMiddle2}%);`;
             middle1.style.cssText = `transform: translate(${positionX / forMiddle1}%,${positionY / forMiddle1}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
+            topBg.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
+            bottomBg.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
             requestAnimationFrame(setMouseParallax);
         }
         setMouseParallax();
 
-        promo.addEventListener('mousemove', function(e) {
-            const promoWidth = promo.offsetWidth;
-            const promoHeight = promo.offsetHeight;
+        document.addEventListener('mousemove', function(e) {
+            const parallaxWidth = parallax.offsetWidth;
+            const parallaxHeight = parallax.offsetHeight;
 
-            const coordX = e.pageX - promoWidth / 2;
-            const coordY = e.pageY - promoHeight / 2;
+            const coordX = e.pageX - parallaxWidth / 2;
+            const coordY = e.pageY - parallaxHeight / 2;
 
-            coordXprocent = coordX / promoWidth * 100;
-            coordYprocent = coordY / promoHeight * 100;
+            coordXprocent = coordX / parallaxWidth * 100;
+            coordYprocent = coordY / parallaxHeight * 100;
         });
+
+        // Parallax on scroll
+
+        document.addEventListener('scroll', function(e) {
+            const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
+            setScrollParallax(scrollTopProcent);
+        });
+
+        function setScrollParallax(scrollTopProcent) {
+            bg.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
+            cloud3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
+            cloud2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
+            cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
+            back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
+            back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
+            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent/ 6}%);`;
+            middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
+            middle2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
+            middle1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;
+            front.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 3}%);`;
+        }
     }
 }
