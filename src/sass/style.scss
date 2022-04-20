@@ -15,9 +15,13 @@ body {
     background: rgb(205, 242, 224);
 }
 .container {
-    max-width: 1330px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+}
+.btn {
+    border: 2px solid #FFF;
+    border-radius: 10px;
 }
 ::-webkit-scrollbar {
     width: 0;

@@ -38,13 +38,10 @@
         color: $dark-green;
     }
     &__btn {
-        margin: 0 auto;
         width: 230px;
         height: 64px;
         background: $purple-bg;
-        border: 2px solid #FFF;
-        box-shadow: 0px 10px 47px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
         font-family: 'Segoe UI';
         font-weight: 600;
         font-size: 22px;

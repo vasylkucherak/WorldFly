@@ -57,7 +57,6 @@ window.onload = function() {
             middle2.style.cssText = `transform: translate(${positionX / forMiddle2}%,${positionY / forMiddle2}%);`;
             middle1.style.cssText = `transform: translate(${positionX / forMiddle1}%,${positionY / forMiddle1}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
-            topBg.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
             bottomBg.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
             requestAnimationFrame(setMouseParallax);
@@ -83,14 +82,14 @@ window.onload = function() {
         });
 
         function setScrollParallax(scrollTopProcent) {
-            bg.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
-            cloud3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 9}%);`;
-            cloud2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
-            cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
-            back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
-            back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
-            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent/ 6}%);`;
-            middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
+            bg.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
+            cloud3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
+            cloud2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
+            cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
+            back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6.5}%);`;
+            back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
+            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent/ 5}%);`;
+            middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
             middle2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
             middle1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;
             front.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 3}%);`;
