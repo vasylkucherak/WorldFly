@@ -16,6 +16,9 @@
     margin: 0 auto;
     padding: 0 15px;
 }
+::-webkit-scrollbar {
+    width: 0;
+}
 
 @import 'blocks/header';
 @import 'blocks/promo';
