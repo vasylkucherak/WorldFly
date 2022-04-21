@@ -7,7 +7,6 @@ window.onload = function() {
     if (parallax) {
 
         // Parallax on mousemove
-
         const bg = document.querySelector('.img-parallax__bg');
         const cloud3 = document.querySelector('.img-parallax__cloud3');
         const cloud2 = document.querySelector('.img-parallax__cloud2');
@@ -65,14 +64,16 @@ window.onload = function() {
         setMouseParallax();
 
         parallaxField.addEventListener('mousemove', function(e) {
-            const parallaxWidth = parallax.offsetWidth;
-            const parallaxHeight = parallax.offsetHeight;
+            if (document.documentElement.scrollTop < 2700) {
+                const parallaxWidth = parallax.offsetWidth;
+                const parallaxHeight = parallax.offsetHeight;
 
-            const coordX = e.pageX - parallaxWidth / 2;
-            const coordY = e.pageY - parallaxHeight / 2;
+                const coordX = e.pageX - parallaxWidth / 2;
+                const coordY = e.pageY - parallaxHeight / 2;
 
-            coordXprocent = coordX / parallaxWidth * 100;
-            coordYprocent = coordY / parallaxHeight * 100;
+                coordXprocent = coordX / parallaxWidth * 100;
+                coordYprocent = coordY / parallaxHeight * 100;
+            }
         });
 
         // Parallax on scroll

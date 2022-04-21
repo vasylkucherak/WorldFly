@@ -20,9 +20,21 @@ body {
     padding: 0 15px;
 }
 .btn {
-    border: 2px solid #FFF;
+    border: 1px solid #FFF;
     border-radius: 10px;
     cursor: pointer;
+    &_blue {
+        font-family: 'Segoe UI';
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 125%;
+        text-align: center;
+        color: #2A3950;
+        width: 135px;
+        height: 42px;
+        background: #00E0C7;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
+    }
 }
 .title {
     padding-top: 50px;
@@ -55,5 +67,6 @@ body {
 @import 'blocks/parallax';
 @import 'blocks/second';
 @import 'blocks/offer';
+@import 'blocks/popular';
 
 @import 'blocks/media';
