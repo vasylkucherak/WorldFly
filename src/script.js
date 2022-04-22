@@ -2,7 +2,6 @@
 
 window.onload = function() {
     const parallax = document.querySelector('.parallax');
-    const parallaxField = document.querySelector('.parallax__field');
 
     if (parallax) {
 
@@ -63,7 +62,7 @@ window.onload = function() {
         }
         setMouseParallax();
 
-        parallaxField.addEventListener('mousemove', function(e) {
+        document.addEventListener('mousemove', function(e) {
             if (document.documentElement.scrollTop < 2700) {
                 const parallaxWidth = parallax.offsetWidth;
                 const parallaxHeight = parallax.offsetHeight;

@@ -1,33 +1,39 @@
 .offer {
     position: relative;
     margin-top: 100vh;
-    padding-bottom: 100px;
+    padding-bottom: 5vw;
     background: $purple-bg;
+    &__map {
+        position: relative;
+        width: 100vw;
+    }
     &__bg {
         display: block;
         margin: 0 auto;
-        width: 90%;
-        object-fit: contain;
+        width: 90vw;
+        object-fit: cover;
     }
     &__subtitle {
-        margin-bottom: 75px;
+        margin-bottom: 7.5vw;
     }
     &__point {
         position: absolute;
         z-index: 1;
         &1 {
-            bottom: 25.5%;
+            bottom: 22%;
             left: 27.5%;
         }
         &2 {
-            top: 24.5%;
+            top: -5%;
             left: 50%;
         }
         &3 {
-            bottom: 19.5%;
+            bottom: 12%;
             right: 9.5%;
         }
         &-body {
+            width: 5vw;
+            object-fit: cover;
             z-index: 1;
         }
         &-circle {
@@ -35,8 +41,8 @@
             bottom: 0;
             left: 50%;
             transform: translate(-53%, -50%);
-            width: 25px;
-            height: 25px;
+            width: 2vw;
+            height: 2vw;
             border-radius: 50%;
             background: #00E0C7;
             z-index: -1;
@@ -44,64 +50,64 @@
     }
     &__card {
         position: absolute;
-        padding: 15px;
-        width: 250px;
+        padding: 1vw;
+        width: 20vw;
         background-color: #fff;
-        border-radius: 20px;
-        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 1.8vw;
+        box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
         &1 {
             transform: rotate(-15deg);
-            top: 25.5%;
-            left: 10%;
+            top: -15%;
+            left: 9%;
         }
         &2 {
-            bottom: 24.5%;
+            bottom: 0%;
             left: 50%;
             transform: translateX(-50%);
         }
         &3 {
             transform: rotate(15deg);
-            top: 25.5%;
-            right: 10%;
+            top: -15%;
+            right: 9%;
         }
         &-img {
-            width: 220px;
-            height: 130px;
-            border-radius: 14px;
+            width: 18vw;
+            height: 11vw;
+            border-radius: 1.2vw;
             object-fit: cover;
             border: 1px solid #FFF;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-            margin-bottom: 2px;
+            box-shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.2vw;
         }
         &-title {
             font-family: 'Segoe UI';
             font-weight: 700;
-            font-size: 16px;
+            font-size: 1.3vw;
             line-height: 125%;
             color: #2A3950;
-            margin-bottom: 2px;
+            margin-bottom: 0.2vw;
         }
         &-subtitle {
             font-family: 'Segoe UI';
             font-style: normal;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 1.1vw;
             line-height: 125%;
             color: #006270;
-            margin-bottom: 5px;
+            margin-bottom: 0.5vw;
         }
         &-btns {
             display: flex;
             justify-content: space-between;
         }
         &-promocode, &-more {
-            width: 80px;
-            height: 25px;
-            font-size: 12px;
-            border-radius: 5px;
+            width: 6.5vw;
+            height: 2.2vw;
+            font-size: 1vw;
+            border-radius: 0.5vw;
             cursor: pointer;
             box-shadow: none;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.4);
         }
         &-promocode {
             font-family: 'Segoe UI';
