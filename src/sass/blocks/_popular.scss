@@ -7,12 +7,12 @@
         overflow: hidden;
         &-prev, &-next {
             position: absolute;
-            top: 13%;
+            top: 15.5%;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 10%;
-            height: 74%;
+            height: 69%;
             background: rgba(0, 0, 0, .7);
             border: 1px solid #000;
             cursor: pointer;
@@ -24,16 +24,16 @@
         }
         &-prev {
             left: 0;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
+            border-top-right-radius: 2vw;
+            border-bottom-right-radius: 2vw;
             svg {
                 margin-right: 5%;
             }
         }
         &-next {
             right: 0;
-            border-top-left-radius: 25px;
-            border-bottom-left-radius: 25px;
+            border-top-left-radius: 2vw;
+            border-bottom-left-radius: 2vw;
             svg {
                 margin-left: 5%;
             }
@@ -42,61 +42,60 @@
             padding: 5% 0;
             display: flex;
             justify-content: start;
-            padding-left: 25%;
+            padding-left: 30%;
             height: 100%;
         }
         &-card, .popular__card {
             position: relative;
-            margin-right: 15vw;
+            margin-right: 20vw;
             padding: 2% 2% 2% 4%;
             display: flex;
-            min-width: 50vw;
-            width: 50vw;
+            min-width: 40vw;
+            width: 40vw;
             height: 100%;
             background-color: #fff;
             box-shadow: 0px 12px 50px rgba(36, 55, 91, 0.15);
-            border-radius: 25px;
+            border-radius: 2vw;
             transition: transform 1s;
             &_active {
                 transform: scale(1.25);
             }
             &-text, .slider__text {
                 width: 67%;
-                &-point {
-                    position: absolute;
-                    top: 7%;
-                    left: 6%;
-                    svg {
-                        width: 30px;
-                        height: 30px;
-                    }
-                }
                 &-title {
-                    margin-left: 45px;
-                    margin-bottom: 4%;
-                    font-family: 'Segoe UI';
+                    display: flex;
+                    margin-bottom: 2vw;
+                    gap: 1vw;
+                    height: 3vw;
+                    width: 100%;
                     font-weight: 600;
-                    font-size: 2vw;
+                    font-size: 1.8vw;
                     line-height: 125%;
-                    color: #222222;
+                    &-point {
+                        height: 100%;
+                    }
+                    &-place {
+                        font-family: 'Segoe UI';
+                        color: #222222;
+                    }
                 }
                 &-descr {
                     padding-right: 5.3%;
                     font-family: 'Segoe UI';
                     font-weight: 600;
-                    font-size: 1.2vw;
+                    font-size: 1vw;
                     line-height: 125%;
                     color: #636668;
                     margin-bottom: 15%;
                 }
                 &-btn {
                     position: absolute;
-                    left: 20%;
+                    left: 22%;
                     bottom: 5%;
                     box-shadow: none;
-                    width: 12vw;
-                    height: 3.5vw;
-                    font-size: 1.5vw;
+                    width: 10vw;
+                    height: 3vw;
+                    font-size: 1.2vw;
                 }
             }
             &-img {
