@@ -1,0 +1,183 @@
+.tour {
+    padding-bottom: 50px;
+    background: $purple-bg;
+    &__slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        &-panel {
+            padding: 1vw 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &-selector {
+            position: relative;
+            display: inline-block;
+            appearance: none;
+            select {
+                padding: 0 .6vw 0 1vw;
+                height: 3vw;
+                font-family: 'Segoe UI';
+                font-size: 1vw;
+                font-weight: 600;
+                line-height: 125%;
+                color: #2A3950;
+                border-radius: .7vw;
+                border: none;
+                background: #00E0C7;
+                &:focus {
+                    outline: 0;
+                }
+                option {
+                    font-family: 'Segoe UI';
+                    font-weight: 600;
+                }
+            }
+        }
+        &-btns {
+            display: flex;
+        }
+        &-prev, &-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3vw;
+            height: 3vw;
+            background: none;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            svg {
+                width: 2vw;
+                height: 2vw;
+            }
+            &.active {
+                border: 1px solid #00E0C7;
+                background: #00E0C7;
+                svg {
+                    fill: $purple-bg;
+                }
+            }
+        }
+        &-prev {
+            margin-right: 1vw;
+            svg {
+                margin-right: 0.2vw;
+            }
+        }
+        &-next {
+            svg {
+                margin-left: 0.2vw;
+            }
+        }
+        &-list {
+            padding: 1vw 0;
+            margin-left: calc(5vw + 15px);
+            display: flex;
+            justify-content: start;
+            height: 100%;
+            transition: transform 1.2s;
+        }
+        &-card, .tour__card {
+            position: relative;
+            margin-right: 3vw;
+            display: flex;
+            flex-direction: column;
+            min-width: calc((84vw - 30px) / 3);
+            width: calc((84vw - 30px) / 3);
+            height: 100%;
+            transition: transform 1.2s;
+            &-img, .tour__img {
+                width: 100%;
+                height: 22vw;
+                &:hover {
+                    .descr {
+                        opacity: 1;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 1vw;
+                    border: 2px solid #fff;
+                    box-shadow: 0vw 0.8vw 1vw rgb(0, 0, 0, .3);
+                }
+                .rating, .cost, .descr {
+                    padding: .6vw .6vw;
+                    position: absolute;
+                    top: 1vw;
+                    height: 3vw;
+                    font-family: 'Segoe UI';
+                    font-size: 1.2vw;
+                    font-weight: 700;
+                    color: #fff;
+                    border: 1px solid #fff;
+                    border-radius: .5vw;
+                    background: rgba(42, 57, 80, 0.3);
+                    backdrop-filter: blur(2px);
+                    overflow: hidden;
+                    transition: all .3s;
+                    .star {
+                        color: #F1E044;
+                        margin-right: .3vw;
+                    }
+                }
+                .rating {
+                    left: 1vw;
+
+                }
+                .cost {
+                    right: 1vw;
+
+                }
+                .descr {
+                    opacity: 0;
+                    height: 16vw;
+                    top: 5vw;
+                    left: 1vw;
+                    width: calc(100% - 2vw);
+                }
+            }
+            &-text, .tour__text {
+                margin: 1vw 0;
+                width: 100%;
+                &-title {
+                    width: 80%;
+                    font-weight: 600;
+                    font-size: 1.8vw;
+                    line-height: 125%;
+                    color: #fff;
+                }
+                &-subtitle {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                &-location, &-days {
+                    color: #fff;
+                    font-size: 1.2vw;
+                    font-weight: 600;
+                    img {
+                        width: 1vw;
+                        height: 1vw;
+                        margin-right: 0.5vw;
+                    }
+                }
+                &-btn {
+                    width: 8vw;
+                    height: 3vw;
+                    font-size: 1.2vw;
+                }
+            }
+            &-img {
+                width: 33%;
+                height: calc(100% - 30px);
+                border-radius: 15px;
+                object-fit: cover;
+            }
+        }
+    }
+}
