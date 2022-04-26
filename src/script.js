@@ -137,4 +137,38 @@ window.onload = function() {
         });
         sliderCards[scrollCounter].classList.add('active');
     });
+
+    //============ Second Slider =====================================================================================
+    const tourList = document.querySelector('.tour__slider-list'),
+          tourCards = tourList.querySelectorAll('.tour__slider-card'),
+          tourBtnPrev = document.querySelector('.tour__slider-prev'),
+          tourBtnNext = document.querySelector('.tour__slider-next');
+    
+    let tourCounter = 0;
+    console.log(tourCards.length);
+            
+    tourBtnNext.classList.add('active');
+    tourBtnNext.addEventListener('click', () => {
+        if (tourCounter < tourCards.length - 3) {
+            tourCounter++;
+            tourList.style.transform = `translateX(calc(-${tourCounter} * (31vw - 10px)))`;
+            tourBtnNext.classList.add('active');
+            tourBtnPrev.classList.add('active');
+        }
+        if (tourCounter == tourCards.length - 3) {
+            tourBtnNext.classList.remove('active');
+        }
+
+    });
+    tourBtnPrev.addEventListener('click', () => {
+        if (tourCounter > 0) {
+            tourCounter--;
+            tourList.style.transform = `translateX(calc(-${tourCounter} * (31vw - 10px)))`;
+            tourBtnPrev.classList.add('active');
+            tourBtnNext.classList.add('active');
+        }
+        if (tourCounter == 0) {
+            tourBtnPrev.classList.remove('active');
+        }
+    });
 }
