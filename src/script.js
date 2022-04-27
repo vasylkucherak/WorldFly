@@ -17,7 +17,6 @@ window.onload = function() {
         const middle2 = document.querySelector('.img-parallax__middle2');
         const middle1 = document.querySelector('.img-parallax__middle1');
         const front = document.querySelector('.img-parallax__front');
-        const topBg = document.querySelector('.img-parallax__top-bg');
         const bottomBg = document.querySelector('.img-parallax__bottom-bg');
 
 
@@ -78,8 +77,10 @@ window.onload = function() {
         // Parallax on scroll
 
         document.addEventListener('scroll', function(e) {
-            const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
-            setScrollParallax(scrollTopProcent);
+            if (document.documentElement.scrollTop < 2700) {
+                const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
+                setScrollParallax(scrollTopProcent);
+            }
         });
 
         function setScrollParallax(scrollTopProcent) {
@@ -89,7 +90,7 @@ window.onload = function() {
             cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
             back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6.5}%);`;
             back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
-            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent/ 5}%);`;
+            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
             middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
             middle2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
             middle1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;

@@ -1,0 +1,96 @@
+.join {
+    padding-top: 5vw;
+    padding-bottom: 50px;
+    background: $purple-bg;
+    &__bg {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: flex-end;
+        width: 100%;
+        &-line {
+            display: block;
+            margin: 0 auto;
+            width: 88%;
+            transform: translateY(-75%);
+        }
+        &-point {
+            &_start, &_end {
+                position: relative;
+                width: 6%;
+                object-fit: cover;
+                z-index: 2;
+                .point-body {
+                    width: 100%;
+                    z-index: 2;
+                }
+                .point-circle {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-53%, -47%);
+                    width: 2vw;
+                    height: 2vw;
+                    border-radius: 50%;
+                    background: #00E0C7;
+                    z-index: -1;
+                }
+            }
+        }
+        &-car {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 160%;
+        }
+    }
+    &__panel {
+        padding: 3%;
+        position: relative;
+        width: 100%;
+        height: 20vw;
+        z-index: 2;
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+            border-radius: 2vw;
+            z-index: -1;
+        }
+        &-subtitle {
+            font-size: 1vw;
+            line-height: 125%;
+        }
+        form {
+            padding: 3%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 9.5vw;
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            font-size: 2vw;
+            &.email {
+                padding: 0 calc(22% + 1vw) 0 2%;
+            }
+            &.submit {
+                position: absolute;
+                bottom: 50%;
+                right: calc(3% + .5vw);
+                width: 20%;
+                height: 3.2vw;
+                transform: translateY(50%);
+                border-radius: 0;
+                line-height: calc(3vw - 2px);
+                box-shadow: none;
+            }
+        }
+    }
+}

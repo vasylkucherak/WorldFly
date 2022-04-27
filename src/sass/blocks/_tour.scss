@@ -29,6 +29,7 @@
                 border-radius: .7vw;
                 border: none;
                 background: #00E0C7;
+                box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
                 &:focus {
                     outline: 0;
                 }
@@ -51,6 +52,7 @@
             border: 1px solid #FFFFFF;
             border-radius: 50%;
             cursor: pointer;
+            box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
             z-index: 2;
             svg {
                 width: 2vw;
