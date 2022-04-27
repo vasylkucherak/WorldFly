@@ -1,6 +1,9 @@
 .tour {
     padding-bottom: 50px;
     background: $purple-bg;
+    &__subtitle {
+        margin-bottom: 0;
+    }
     &__slider {
         position: relative;
         width: 100%;
@@ -83,12 +86,15 @@
         &-card, .tour__card {
             position: relative;
             margin-right: 3vw;
-            display: flex;
+            display: none;
             flex-direction: column;
             min-width: calc((84vw - 30px) / 3);
             width: calc((84vw - 30px) / 3);
             height: 100%;
             transition: transform 1.2s;
+            &.active {
+                display: flex;
+            }
             &-img, .tour__img {
                 width: 100%;
                 height: 22vw;
