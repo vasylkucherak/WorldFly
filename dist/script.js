@@ -140,7 +140,7 @@ window.onload = function() {
     });
 
     //============ Second Slider =====================================================================================
-    const tourSelect = document.querySelector('#tour'),
+    const tourSelect = document.querySelector('#select'),
           tourList = document.querySelector('.tour__slider-list'),
           tourCards = tourList.querySelectorAll('.tour__slider-card'),
           tourBtnPrev = document.querySelector('.tour__slider-prev'),
