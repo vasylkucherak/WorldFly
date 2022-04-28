@@ -24,12 +24,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60vw;
+        width: 50vw;
     }
     &__title {
         margin-bottom: 2vw;
         width: 100%;
-        font-size: 5vw;
+        font-size: 4vw;
         color: $dark-green;
         text-shadow: 0vw 0.6vw 0.2vw rgba(0, 0, 0, 0.2);
     }
@@ -37,13 +37,13 @@
         margin-bottom: 5vw;
         width: 100%;
         font-weight: 400;
-        font-size: 2vw;
-        line-height: 2.7vw;
+        font-size: 1.5vw;
+        line-height: 125%;
         color: $dark-green;
     }
     &__btn {
-        width: 20vw;
-        height: 5.4vw;
+        width: 18vw;
+        height: 5vw;
         background: $purple-bg;
         box-shadow: 0 0.8vw 1vw rgba(0, 0, 0, 0.3);
         font-family: 'Segoe UI';
