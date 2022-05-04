@@ -1,0 +1,52 @@
+.parallax {
+    min-height: 100vh;
+    &__field {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 400vh;
+        z-index: 2;
+    }
+    &__body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__images, .img-parallax {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        bottom: -5%;
+        left: -5%;
+        &__item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &__bg, &__cloud1, &__cloud2, &__cloud3, &__back1, &__back2, &__middle1, &__middle2, &__middle3, &__lake, &__front {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        @media (max-aspect-ratio: 5/4) {
+            &__front {
+                width: 250%;
+                left: -7%;
+            }
+            &__lake {
+                width: 190%;
+                left: -30%;
+            }
+        }
+    }
+}

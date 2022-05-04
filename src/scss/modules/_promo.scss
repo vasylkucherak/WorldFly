@@ -4,7 +4,63 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    z-index: 1;
+    &__content {
+        margin: 50px auto;
+        padding: 0 20px;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 60vw;
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: 2vw;
+        width: 100%;
+        font-size: 6vw;
+        color: $dark-green;
+        text-shadow: 0 .6vw .2vw rgba(165, 165, 165, 0.2);
+    }
+    &__subtitle {
+        margin-bottom: 2vw;
+        width: 100%;
+        font-weight: 400;
+        font-size: 1.5vw;
+        line-height: 125%;
+        color: $dark-green;
+    }
+    &__btn {
+        width: 18vw;
+        height: 5vw;
+        background: $purple-bg;
+        box-shadow: 0 .8vw 1vw rgba(0, 0, 0, 0.3);
+        font-family: 'Segoe UI';
+        font-weight: 600;
+        font-size: 2vw;
+        line-height: 125%;
+        color: #FFF;
+    }
+    @media (max-width: 767px) {
+        &__content {
+            max-width: 460px;
+        }
+        &__title {
+            margin-bottom: 15px;
+            font-size: 46px;
+            text-shadow: 0 6px 2px rgba(165, 165, 165, 0.2);
+        }
+        &__subtitle {
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        &__btn {
+            width: 138px;
+            height: 38px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+            font-size: 15px;
+        }
+    }
 }
 .promo_bg {
     width: 100vw;

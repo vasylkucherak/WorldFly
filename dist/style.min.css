@@ -194,7 +194,62 @@ h1, h2, h3, h4, h5, h6 {
   width: 0;
 }
 
+.parallax {
+  min-height: 100vh;
+}
+.parallax__field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400vh;
+  z-index: 2;
+}
+.parallax__body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.parallax__images, .parallax .img-parallax {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  bottom: -5%;
+  left: -5%;
+}
+.parallax__images__item, .parallax .img-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.parallax__images__bg, .parallax__images__cloud1, .parallax__images__cloud2, .parallax__images__cloud3, .parallax__images__back1, .parallax__images__back2, .parallax__images__middle1, .parallax__images__middle2, .parallax__images__middle3, .parallax__images__lake, .parallax__images__front, .parallax .img-parallax__bg, .parallax .img-parallax__cloud1, .parallax .img-parallax__cloud2, .parallax .img-parallax__cloud3, .parallax .img-parallax__back1, .parallax .img-parallax__back2, .parallax .img-parallax__middle1, .parallax .img-parallax__middle2, .parallax .img-parallax__middle3, .parallax .img-parallax__lake, .parallax .img-parallax__front {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+@media (max-aspect-ratio: 5/4) {
+  .parallax__images__front, .parallax .img-parallax__front {
+    width: 250%;
+    left: -7%;
+  }
+  .parallax__images__lake, .parallax .img-parallax__lake {
+    width: 190%;
+    left: -30%;
+  }
+}
+
 .header {
+  position: absolute;
+  width: 100%;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 10px 44px rgba(0, 0, 0, 0.1);
   padding: 5px 0;
@@ -283,7 +338,7 @@ body._touch .menu__link {
   }
   .menu__item:hover {
     color: rgb(0, 171, 230);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255);
   }
 }
 @media (max-width: 767px) {
@@ -372,7 +427,7 @@ body._touch .menu__link {
     left: 0;
     height: 10%;
     width: 100%;
-    background-color: #fff;
+    background-color: #2A3950;
     transition: all 0.3s ease;
   }
 }
@@ -382,7 +437,63 @@ body._touch .menu__link {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  z-index: 1;
+}
+.promo__content {
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 60vw;
+  text-align: center;
+}
+.promo__title {
+  margin-bottom: 2vw;
+  width: 100%;
+  font-size: 6vw;
+  color: #006270;
+  text-shadow: 0 0.6vw 0.2vw rgba(165, 165, 165, 0.2);
+}
+.promo__subtitle {
+  margin-bottom: 2vw;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 125%;
+  color: #006270;
+}
+.promo__btn {
+  width: 18vw;
+  height: 5vw;
+  background: #2A3950;
+  box-shadow: 0 0.8vw 1vw rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 2vw;
+  line-height: 125%;
+  color: #FFF;
+}
+@media (max-width: 767px) {
+  .promo__content {
+    max-width: 460px;
+  }
+  .promo__title {
+    margin-bottom: 15px;
+    font-size: 46px;
+    text-shadow: 0 6px 2px rgba(165, 165, 165, 0.2);
+  }
+  .promo__subtitle {
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .promo__btn {
+    width: 138px;
+    height: 38px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+  }
 }
 
 .promo_bg {

@@ -7,9 +7,14 @@
 </head>
     <body>
         <div class="wrapper">
-            <section class="promo promo_bg"></section>
+            @@include('html/parallax.html', {})
             <section class="promo">
                 @@include('html/header.html', {})
+                <div class="promo__content">
+                    <div class="promo__title title">Explore The World<br>With Us!</div>
+                    <div class="promo__subtitle subtitle">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.</div>
+                    <button class="promo__btn btn">Explore Now</button>
+                </div>
             </section>
             <main></main>
             @@include('html/footer.html', {})
