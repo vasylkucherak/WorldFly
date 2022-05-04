@@ -1,71 +1,54 @@
-const gulp        = require('gulp');
-const browserSync = require('browser-sync');
-const sass        = require('gulp-sass')(require('sass'));
-const cleanCSS = require('gulp-clean-css');
-const autoprefixer = require('gulp-autoprefixer');
-const rename = require("gulp-rename");
-const imagemin = require('gulp-imagemin');
-const htmlmin = require('gulp-htmlmin');
+import gulp from 'gulp'; //? Основний модуль
+import { path } from './gulp/config/path.js'; //? Імпорт шляхів
+import { plugins } from './gulp/config/plugins.js'; //? Імпорт загальних плагінів
 
-gulp.task('server', function() {
+//! Передаємо значення в глобальну змінну
+global.app = {
+    isBuild: process.argv.includes('--build'),
+    isDev: !process.argv.includes('--build'),
+    gulp: gulp,
+    path: path,
+    plugins: plugins
+}
 
-    browserSync({
-        server: {
-            baseDir: "dist"
-        }
-    });
+//! Імпорт завдань (gulp/tasks/*.js)
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { img } from "./gulp/tasks/img.js";
+import { icons } from "./gulp/tasks/icons.js";
+import { otfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
 
-    gulp.watch("src/*.html").on('change', browserSync.reload);
-});
+//! Наглядач за змінами в файлах
+function watcher() {
+    gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
+    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.img, img);
+    gulp.watch(path.watch.icons, icons);
+}
 
-gulp.task('styles', function() {
-    return gulp.src("src/sass/**/*.+(scss|sass)")
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename({suffix: '.min', prefix: ''}))
-        .pipe(autoprefixer())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("dist/css"))
-        .pipe(browserSync.stream());
-});
+//! Почергова обробка шрифтів
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 
-gulp.task('watch', function() {
-    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
-    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
-    gulp.watch("src/script.js").on('change', gulp.parallel('scripts'));
-    gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
-    gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
-    gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
-});
+//! Побудова сценаріїв виконання завдань
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, img, icons)); //? Основні завдання, котрі виконуються одночасно
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server)); //? Завдання, котрі виконуються один за одним в режимі "розробника"
+const build = gulp.series(reset, mainTasks); //? Завдання, котрі виконуються один за одним в режимі "продакшн"
+const deployZIP = gulp.series(reset, mainTasks, zip); //? Завдання, котрі виконуються один за одним в режимі "створення архіву"
+const deployFTP = gulp.series(reset, mainTasks, ftp); //? Завдання, котрі виконуються один за одним в режимі "вигрузки результату на ftp сервер"
 
-gulp.task('html', function () {
-    return gulp.src("src/*.html")
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest("dist/"));
-});
+//! Експорт сценаріїв
+export { dev }
+export { build }
+export { deployZIP }
+export { deployFTP }
 
-gulp.task('scripts', function () {
-    return gulp.src("src/script.js")
-        .pipe(gulp.dest("dist/"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('fonts', function () {
-    return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('icons', function () {
-    return gulp.src("src/icons/**/*")
-        .pipe(gulp.dest("dist/icons"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('images', function () {
-    return gulp.src("src/img/**/*")
-        .pipe(imagemin())
-        .pipe(gulp.dest("dist/img"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));
+//! Виконання завдання за замовчуванням
+gulp.task('default', dev);

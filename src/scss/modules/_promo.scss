@@ -1,0 +1,14 @@
+.promo {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 1;
+}
+.promo_bg {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
