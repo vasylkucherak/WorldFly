@@ -107,6 +107,9 @@
                     flex: 0 1 18%;
                     &_class {
                         margin-bottom: 0;
+                        select {
+                            cursor: pointer;
+                        }
                     }
                     input, select {
                         position: relative;
@@ -120,6 +123,7 @@
                             background: #00E0C7;
                             font-weight: 700;
                             color: #2A3950;
+                            cursor: pointer;
                         }
                     }
                     label {

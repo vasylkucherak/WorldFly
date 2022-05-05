@@ -16,7 +16,7 @@ export const scss = () => {
                 message: 'Error: <%= error.message %>'
             }))
         )
-        .pipe(app.plugins.replace(/@img\//g, '../img/')) //? обробка alias-ів (псевдонімів)
+        .pipe(app.plugins.replace(/@img\//g, 'img/')) //? обробка alias-ів (псевдонімів)
         .pipe(sass({
             outputStyle: 'expanded' //? вихідний стиль (розширений)
         }))

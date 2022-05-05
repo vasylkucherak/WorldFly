@@ -76,7 +76,7 @@ export default function parallax() {
         // Parallax on scroll
 
         document.addEventListener('scroll', function(e) {
-            if (document.documentElement.scrollTop < 1000) {
+            if (document.documentElement.scrollTop < 1800) {
                 const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
                 setScrollParallax(scrollTopProcent);
             }

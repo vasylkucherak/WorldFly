@@ -158,41 +158,38 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 .btn_blue {
-  font-family: "Segoe UI";
   font-weight: 700;
-  font-size: 1.2vw;
+  font-size: 14px;
   line-height: 125%;
   text-align: center;
   color: #2A3950;
-  width: 10vw;
-  height: 3vw;
+  width: 120px;
+  height: 40px;
   background: #00E0C7;
-  box-shadow: 0 0.8vw 1vw rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
 }
 
 .title {
-  padding-top: 0.5vw;
-  margin-bottom: 1.5vw;
+  padding-top: 5px;
+  margin-bottom: 15px;
   font-family: "DM Serif Display";
-  font-weight: 400;
-  font-size: 3vw;
+  font-size: 30px;
   line-height: 112%;
-  text-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   text-align: center;
   color: #fff;
 }
 
 .subtitle {
   margin: 0 auto;
-  margin-bottom: 2.5vw;
-  width: 50vw;
-  font-family: "Segoe UI";
+  margin-bottom: 25px;
+  width: 500px;
   font-weight: 600;
-  font-size: 1.6vw;
-  line-height: 2.4vw;
+  font-size: 16px;
+  line-height: 24px;
   text-align: center;
   color: #ccc;
-  text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 ::-webkit-scrollbar {
@@ -626,6 +623,9 @@ body._touch .menu__link {
 .explore-tabs__block form .input-wrapper_class {
   margin-bottom: 0;
 }
+.explore-tabs__block form .input-wrapper_class select {
+  cursor: pointer;
+}
 .explore-tabs__block form .input-wrapper input, .explore-tabs__block form .input-wrapper select {
   position: relative;
   width: 100%;
@@ -639,6 +639,7 @@ body._touch .menu__link {
   background: #00E0C7;
   font-weight: 700;
   color: #2A3950;
+  cursor: pointer;
 }
 .explore-tabs__block form .input-wrapper label {
   position: absolute;
@@ -694,5 +695,83 @@ body._touch .menu__link {
   }
   .explore-tabs__block form .input-wrapper_class {
     margin-bottom: 25px;
+  }
+}
+.second {
+  position: relative;
+  margin: 250px 0px;
+  background-color: #2A3950;
+}
+.second__bg {
+  position: absolute;
+  top: 30%;
+  right: 2%;
+  width: 60%;
+  object-fit: contain;
+}
+.second__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.second__img {
+  margin: 15px;
+  flex: 0 0 550px;
+  width: 550px;
+  height: 350px;
+  background: url("img/second/camp.png") center/cover no-repeat;
+}
+.second__descr, .second .descr-second {
+  flex: 0 1 550px;
+  margin: 15px;
+}
+.second__descr__price, .second .descr-second__price {
+  font-family: "Denk One";
+  font-size: 25px;
+  line-height: 38px;
+  text-transform: capitalize;
+  color: #ccc;
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+.second__descr__title, .second .descr-second__title {
+  padding-top: 0;
+  text-align: start;
+}
+.second__descr__subtitle, .second .descr-second__subtitle {
+  width: 100%;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 620px) {
+  .second__bg {
+    top: 55%;
+    width: 80%;
+    object-fit: contain;
+  }
+  .second__img {
+    margin: 10px;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 55vw;
+  }
+  .second__descr, .second .descr-second {
+    margin: 0;
+  }
+  .second__descr__price, .second .descr-second__price {
+    font-family: "Denk One";
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .second__descr__title, .second .descr-second__title {
+    text-align: center;
+  }
+  .second__descr__subtitle, .second .descr-second__subtitle {
+    text-align: center;
+  }
+  .second__descr__btn, .second .descr-second__btn {
+    display: block;
+    margin: 0 auto;
   }
 }
