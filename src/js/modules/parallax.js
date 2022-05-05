@@ -16,6 +16,7 @@ export default function parallax() {
         const middle2 = document.querySelector('.img-parallax__middle2');
         const middle1 = document.querySelector('.img-parallax__middle1');
         const front = document.querySelector('.img-parallax__front');
+        const bottomBg = document.querySelector('.img-parallax__bottom-bg');
 
 
         const forBg = 45;
@@ -53,13 +54,14 @@ export default function parallax() {
             middle2.style.cssText = `transform: translate(${positionX / forMiddle2}%,${positionY / forMiddle2}%);`;
             middle1.style.cssText = `transform: translate(${positionX / forMiddle1}%,${positionY / forMiddle1}%);`;
             front.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
+            bottomBg.style.cssText = `transform: translate(${positionX / forFront}%,${positionY / forFront}%);`;
 
             requestAnimationFrame(setMouseParallax);
         }
         setMouseParallax();
 
         document.addEventListener('mousemove', function(e) {
-            if (document.documentElement.scrollTop < 2700) {
+            if (document.documentElement.scrollTop < 1000) {
                 const parallaxWidth = parallax.offsetWidth;
                 const parallaxHeight = parallax.offsetHeight;
 
@@ -74,24 +76,24 @@ export default function parallax() {
         // Parallax on scroll
 
         document.addEventListener('scroll', function(e) {
-            if (document.documentElement.scrollTop < 2700) {
+            if (document.documentElement.scrollTop < 1000) {
                 const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
                 setScrollParallax(scrollTopProcent);
             }
         });
 
         function setScrollParallax(scrollTopProcent) {
-            bg.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
-            cloud3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 8}%);`;
-            cloud2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 7}%);`;
-            cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
-            back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6.5}%);`;
-            back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;
-            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
-            middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
-            middle2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;
-            middle1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;
-            front.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 3}%);`;
+            bg.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;//5
+            cloud3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 6}%);`;//6
+            cloud2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 5}%);`;//5
+            cloud1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;//4
+            back2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4.5}%);`;//4.5
+            back1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;//4
+            lake.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;//4
+            middle3.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 4}%);`;//4
+            middle2.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 3.5}%);`;//3.5
+            middle1.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 3}%);`;//3
+            front.parentElement.style.cssText = `transform: translate(0%,-${scrollTopProcent / 2}%);`;
         }
     }
 }
