@@ -1,5 +1,6 @@
 .explore {
-    margin: 50vw 0px 100px 0px;
+    padding: 50vw  0 100px 0;
+    z-index: 2;
     &-tabs {
         position: relative;
         &__items {

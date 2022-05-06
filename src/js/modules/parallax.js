@@ -79,7 +79,10 @@ export default function parallax() {
             if (document.documentElement.scrollTop < 1800) {
                 const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
                 setScrollParallax(scrollTopProcent);
-            } 
+                parallax.classList.remove('hidden');
+            } else {
+                parallax.classList.add('hidden');
+            }
         });
 
         function setScrollParallax(scrollTopProcent) {

@@ -2,12 +2,14 @@
     position: relative;
     margin: 250px 0px;
     background-color: $purple-bg;
+    z-index: 2;
     &__bg {
         position: absolute;
         top: 30%;
         right: 2%;
         width: 60%;
         object-fit: contain;
+        z-index: -1;
     }
     &__wrapper {
         display: flex;

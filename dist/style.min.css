@@ -203,6 +203,11 @@ h1, h2, h3, h4, h5, h6 {
 .parallax {
   min-height: 100vh;
 }
+.parallax.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .parallax__field {
   position: absolute;
   top: 0;
@@ -214,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 .parallax__body {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: -1;
@@ -247,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 105vh;
   left: 0;
   width: 100%;
-  height: 200%;
+  height: 100%;
   background: #2A3950;
 }
 @media (max-aspect-ratio: 5/4) {
@@ -517,7 +522,8 @@ body._touch .menu__link {
 }
 
 .explore {
-  margin: 50vw 0px 100px 0px;
+  padding: 50vw 0 100px 0;
+  z-index: 2;
 }
 .explore-tabs {
   position: relative;
@@ -705,6 +711,7 @@ body._touch .menu__link {
   position: relative;
   margin: 250px 0px;
   background-color: #2A3950;
+  z-index: 2;
 }
 .second__bg {
   position: absolute;
@@ -712,6 +719,7 @@ body._touch .menu__link {
   right: 2%;
   width: 60%;
   object-fit: contain;
+  z-index: -1;
 }
 .second__wrapper {
   display: flex;
@@ -942,4 +950,495 @@ body._touch .menu__link {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
+}
+.popular {
+  padding-bottom: 50px;
+  background: #2A3950;
+}
+.popular__slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.popular__slider-prev, .popular__slider-next {
+  position: absolute;
+  top: 15.5%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 69%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #000;
+  cursor: pointer;
+  z-index: 2;
+}
+.popular__slider-prev svg, .popular__slider-next svg {
+  width: 5vw;
+  height: 5vw;
+}
+.popular__slider-prev.active, .popular__slider-next.active {
+  display: flex;
+}
+.popular__slider-prev {
+  left: 0;
+  border-top-right-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+}
+.popular__slider-prev svg {
+  margin-right: 5%;
+}
+.popular__slider-next {
+  right: 0;
+  border-top-left-radius: 2vw;
+  border-bottom-left-radius: 2vw;
+}
+.popular__slider-next svg {
+  margin-left: 5%;
+}
+.popular__slider-list {
+  padding: 5% 0;
+  display: flex;
+  justify-content: start;
+  padding-left: 30%;
+  height: 100%;
+  transition: transform 1.2s;
+}
+.popular__slider-card, .popular__slider .popular__card {
+  position: relative;
+  margin-right: 20vw;
+  padding: 2% 2% 2% 4%;
+  display: flex;
+  min-width: 40vw;
+  width: 40vw;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0px 12px 50px rgba(36, 55, 91, 0.15);
+  border-radius: 2vw;
+  box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
+  transition: transform 1.2s;
+}
+.popular__slider-card.active, .popular__slider .popular__card.active {
+  transform: scale(1.25);
+}
+.popular__slider-card-text, .popular__slider-card .slider__text, .popular__slider .popular__card-text, .popular__slider .popular__card .slider__text {
+  width: 67%;
+}
+.popular__slider-card-text-title, .popular__slider-card .slider__text-title, .popular__slider .popular__card-text-title, .popular__slider .popular__card .slider__text-title {
+  display: flex;
+  margin-bottom: 2vw;
+  gap: 1vw;
+  height: 3vw;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.8vw;
+  line-height: 125%;
+}
+.popular__slider-card-text-title-point, .popular__slider-card .slider__text-title-point, .popular__slider .popular__card-text-title-point, .popular__slider .popular__card .slider__text-title-point {
+  height: 100%;
+}
+.popular__slider-card-text-title-place, .popular__slider-card .slider__text-title-place, .popular__slider .popular__card-text-title-place, .popular__slider .popular__card .slider__text-title-place {
+  font-family: "Segoe UI";
+  color: #222222;
+}
+.popular__slider-card-text-descr, .popular__slider-card .slider__text-descr, .popular__slider .popular__card-text-descr, .popular__slider .popular__card .slider__text-descr {
+  padding-right: 5.3%;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 1.23vw;
+  line-height: 125%;
+  color: #636668;
+  margin-bottom: 12%;
+}
+.popular__slider-card-text-btn, .popular__slider-card .slider__text-btn, .popular__slider .popular__card-text-btn, .popular__slider .popular__card .slider__text-btn {
+  position: absolute;
+  left: 22%;
+  bottom: 5%;
+  box-shadow: none;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.2vw;
+}
+.popular__slider-card-img, .popular__slider .popular__card-img {
+  width: 33%;
+  height: calc(100% - 30px);
+  border-radius: 1.5vw;
+  object-fit: cover;
+}
+
+.tour {
+  padding-bottom: 50px;
+  background: #2A3950;
+}
+.tour__subtitle {
+  margin-bottom: 0;
+}
+.tour__slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.tour__slider-panel {
+  padding: 1vw 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.tour__slider-selector {
+  position: relative;
+  display: inline-block;
+  appearance: none;
+}
+.tour__slider-selector select {
+  padding: 0 0.6vw 0 1vw;
+  height: 3vw;
+  font-family: "Segoe UI";
+  font-size: 1vw;
+  font-weight: 600;
+  line-height: 125%;
+  color: #2A3950;
+  border-radius: 0.7vw;
+  border: none;
+  background: #00E0C7;
+  box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.tour__slider-selector select:focus {
+  outline: 0;
+}
+.tour__slider-selector select option {
+  font-family: "Segoe UI";
+  font-weight: 600;
+}
+.tour__slider-btns {
+  display: flex;
+}
+.tour__slider-prev, .tour__slider-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3vw;
+  height: 3vw;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.tour__slider-prev svg, .tour__slider-next svg {
+  width: 2vw;
+  height: 2vw;
+}
+.tour__slider-prev.active, .tour__slider-next.active {
+  border: 1px solid #00E0C7;
+  background: #00E0C7;
+}
+.tour__slider-prev.active svg, .tour__slider-next.active svg {
+  fill: #2A3950;
+}
+.tour__slider-prev {
+  margin-right: 1vw;
+}
+.tour__slider-prev svg {
+  margin-right: 0.2vw;
+}
+.tour__slider-next svg {
+  margin-left: 0.2vw;
+}
+.tour__slider-list {
+  padding: 1vw 0;
+  margin-left: calc(5vw + 15px);
+  display: flex;
+  justify-content: start;
+  height: 100%;
+  transition: transform 1.2s;
+}
+.tour__slider-card, .tour__slider .tour__card {
+  position: relative;
+  margin-right: 3vw;
+  display: none;
+  flex-direction: column;
+  min-width: calc((84vw - 30px) / 3);
+  width: calc((84vw - 30px) / 3);
+  height: 100%;
+  transition: transform 1.2s;
+}
+.tour__slider-card.active, .tour__slider .tour__card.active {
+  display: flex;
+}
+.tour__slider-card-img, .tour__slider-card .tour__img, .tour__slider .tour__card-img, .tour__slider .tour__card .tour__img {
+  width: 100%;
+  height: 22vw;
+}
+.tour__slider-card-img:hover .descr, .tour__slider-card .tour__img:hover .descr, .tour__slider .tour__card-img:hover .descr, .tour__slider .tour__card .tour__img:hover .descr {
+  opacity: 1;
+}
+.tour__slider-card-img img, .tour__slider-card .tour__img img, .tour__slider .tour__card-img img, .tour__slider .tour__card .tour__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1vw;
+  border: 2px solid #fff;
+  box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
+}
+.tour__slider-card-img .rating, .tour__slider-card-img .cost, .tour__slider-card-img .descr, .tour__slider-card .tour__img .rating, .tour__slider-card .tour__img .cost, .tour__slider-card .tour__img .descr, .tour__slider .tour__card-img .rating, .tour__slider .tour__card-img .cost, .tour__slider .tour__card-img .descr, .tour__slider .tour__card .tour__img .rating, .tour__slider .tour__card .tour__img .cost, .tour__slider .tour__card .tour__img .descr {
+  padding: 0.6vw 0.6vw;
+  position: absolute;
+  top: 1vw;
+  height: 3vw;
+  font-family: "Segoe UI";
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0.5vw;
+  background: rgba(42, 57, 80, 0.3);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.tour__slider-card-img .rating .star, .tour__slider-card-img .cost .star, .tour__slider-card-img .descr .star, .tour__slider-card .tour__img .rating .star, .tour__slider-card .tour__img .cost .star, .tour__slider-card .tour__img .descr .star, .tour__slider .tour__card-img .rating .star, .tour__slider .tour__card-img .cost .star, .tour__slider .tour__card-img .descr .star, .tour__slider .tour__card .tour__img .rating .star, .tour__slider .tour__card .tour__img .cost .star, .tour__slider .tour__card .tour__img .descr .star {
+  color: #F1E044;
+  margin-right: 0.3vw;
+}
+.tour__slider-card-img .rating, .tour__slider-card .tour__img .rating, .tour__slider .tour__card-img .rating, .tour__slider .tour__card .tour__img .rating {
+  left: 1vw;
+}
+.tour__slider-card-img .cost, .tour__slider-card .tour__img .cost, .tour__slider .tour__card-img .cost, .tour__slider .tour__card .tour__img .cost {
+  right: 1vw;
+}
+.tour__slider-card-img .descr, .tour__slider-card .tour__img .descr, .tour__slider .tour__card-img .descr, .tour__slider .tour__card .tour__img .descr {
+  opacity: 0;
+  height: 16vw;
+  top: 5vw;
+  left: 1vw;
+  width: calc(100% - 2vw);
+}
+.tour__slider-card-text, .tour__slider-card .tour__text, .tour__slider .tour__card-text, .tour__slider .tour__card .tour__text {
+  margin: 1vw 0;
+  width: 100%;
+}
+.tour__slider-card-text-title, .tour__slider-card .tour__text-title, .tour__slider .tour__card-text-title, .tour__slider .tour__card .tour__text-title {
+  width: 80%;
+  font-weight: 600;
+  font-size: 1.8vw;
+  line-height: 125%;
+  color: #fff;
+}
+.tour__slider-card-text-subtitle, .tour__slider-card .tour__text-subtitle, .tour__slider .tour__card-text-subtitle, .tour__slider .tour__card .tour__text-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tour__slider-card-text-location, .tour__slider-card-text-days, .tour__slider-card .tour__text-location, .tour__slider-card .tour__text-days, .tour__slider .tour__card-text-location, .tour__slider .tour__card-text-days, .tour__slider .tour__card .tour__text-location, .tour__slider .tour__card .tour__text-days {
+  color: #fff;
+  font-size: 1.2vw;
+  font-weight: 600;
+}
+.tour__slider-card-text-location img, .tour__slider-card-text-days img, .tour__slider-card .tour__text-location img, .tour__slider-card .tour__text-days img, .tour__slider .tour__card-text-location img, .tour__slider .tour__card-text-days img, .tour__slider .tour__card .tour__text-location img, .tour__slider .tour__card .tour__text-days img {
+  width: 1vw;
+  height: 1vw;
+  margin-right: 0.5vw;
+}
+.tour__slider-card-text-btn, .tour__slider-card .tour__text-btn, .tour__slider .tour__card-text-btn, .tour__slider .tour__card .tour__text-btn {
+  width: 8vw;
+  height: 3vw;
+  font-size: 1.2vw;
+}
+.tour__slider-card-img, .tour__slider .tour__card-img {
+  width: 33%;
+  height: calc(100% - 30px);
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.join {
+  padding-top: 5vw;
+  padding-bottom: 100px;
+  background: #2A3950;
+}
+.join__bg {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  width: 100%;
+}
+.join__bg-line {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  transform: translateY(-75%);
+}
+.join__bg-point_start, .join__bg-point_end {
+  position: relative;
+  width: 6%;
+  object-fit: cover;
+  z-index: 2;
+}
+.join__bg-point_start .point-body, .join__bg-point_end .point-body {
+  width: 100%;
+  z-index: 2;
+}
+.join__bg-point_start .point-circle, .join__bg-point_end .point-circle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-53%, -47%);
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background: #00E0C7;
+  z-index: -1;
+}
+.join__bg-car {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 160%;
+}
+.join__panel {
+  padding: 3%;
+  position: relative;
+  width: 100%;
+  height: 20vw;
+  z-index: 2;
+}
+.join__panel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 2vw;
+  z-index: -1;
+}
+.join__panel-subtitle {
+  font-size: 1vw;
+  line-height: 125%;
+}
+.join__panel form {
+  padding: 3%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 9.5vw;
+}
+.join__panel input {
+  width: 100%;
+  height: 100%;
+  font-size: 2vw;
+}
+.join__panel input.email {
+  padding: 0 calc(22% + 1vw) 0 2%;
+}
+.join__panel input.submit {
+  position: absolute;
+  bottom: 50%;
+  right: calc(3% + 0.5vw);
+  width: 20%;
+  height: 3.2vw;
+  transform: translateY(50%);
+  border-radius: 0;
+  line-height: calc(3vw - 2px);
+  box-shadow: none;
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  background: #2A3950;
+}
+.footer__body {
+  padding: 30px 0;
+  background: #006270;
+}
+.footer__body .container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__body-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+}
+.footer__body-row img {
+  width: 70%;
+  margin-bottom: 20px;
+}
+.footer__body-row p {
+  font-family: "Segoe UI";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.footer__body-title {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 125%;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+.footer__body-subtitle {
+  margin-top: 15px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.footer__body a {
+  padding: 5px;
+}
+.footer__body a:hover {
+  color: rgb(0, 171, 230);
+}
+.footer__nav {
+  padding: 10px 0;
+  height: 50px;
+  background: #2A3950;
+}
+.footer__nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__nav-social {
+  display: flex;
+  justify-content: flex-start;
+}
+.footer__nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 25px;
+  background: #00E0C7;
+  border-radius: 3px;
+}
+.footer__nav-item svg {
+  fill: #2A3950;
+  width: 20px;
+  height: 20px;
+}
+.footer__nav-item:hover {
+  background: rgb(0, 171, 230);
+}
+.footer__nav-item:hover svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.footer__nav-copy {
+  font-family: "Segoe UI";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #00E0C7;
 }
