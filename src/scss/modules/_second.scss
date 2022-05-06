@@ -32,15 +32,21 @@
             text-transform: capitalize;
             color: #ccc;
             text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
         }
         &__title {
             padding-top: 0;
-            text-align: start;
+            text-align: center;
         }
         &__subtitle {
             width: 100%;
             text-align: start;
             margin-bottom: 10px;
+            text-align: center;
+        }
+        &__btn {
+            display: block;
+            margin: 0 auto;
         }
     }
 }
@@ -59,21 +65,6 @@
         }
         &__descr, .descr-second {
             margin: 0;
-            &__price {
-                font-family: 'Denk One';
-                text-transform: capitalize;
-                text-align: center;
-            }
-            &__title {
-                text-align: center;
-            }
-            &__subtitle {
-                text-align: center;
-            }
-            &__btn {
-                display: block;
-                margin: 0 auto;
-            }
         }
     }
 }

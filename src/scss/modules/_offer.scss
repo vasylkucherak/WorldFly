@@ -1,0 +1,174 @@
+.offer {
+    position: relative;
+    padding: 100px 0;
+    background: $purple-bg;
+    &__map {
+        position: relative;
+        width: 100vw;
+    }
+    &__bg {
+        display: block;
+        margin: 0 auto;
+        width: 90vw;
+        object-fit: cover;
+    }
+    &__subtitle {
+        margin-bottom: 10vw;
+    }
+    &__point {
+        position: absolute;
+        z-index: 1;
+        &1 {
+            bottom: 22%;
+            left: 27.5%;
+        }
+        &2 {
+            top: -5%;
+            left: 50%;
+        }
+        &3 {
+            bottom: 12%;
+            right: 9.5%;
+        }
+        &-body {
+            width: 6vw;
+            object-fit: cover;
+            z-index: 1;
+        }
+        &-circle {
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translate(-53%, -50%);
+            width: 2vw;
+            height: 2vw;
+            border-radius: 50%;
+            background: #00E0C7;
+            z-index: -1;
+        }
+    }
+    &__card {
+        position: absolute;
+        padding: 1vw;
+        width: 24vw;
+        background-color: #fff;
+        border-radius: 1.8vw;
+        box-shadow: 0vw 0.8vw 1vw rgba(0, 0, 0, 0.3);
+        &1 {
+            transform: rotate(-15deg);
+            top: -15%;
+            left: 9%;
+        }
+        &2 {
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &3 {
+            transform: rotate(15deg);
+            top: -15%;
+            right: 9%;
+        }
+        &-img {
+            width: 22vw;
+            height: 14vw;
+            border-radius: 1.2vw;
+            object-fit: cover;
+            border: 1px solid #FFF;
+            box-shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.2vw;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 1.6vw;
+            line-height: 125%;
+            color: #2A3950;
+            margin-bottom: 0.2vw;
+        }
+        &-subtitle {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.4vw;
+            line-height: 125%;
+            color: #006270;
+            margin-bottom: 0.5vw;
+        }
+        &-btns {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-promocode, &-more {
+            width: 8.5vw;
+            height: 2.5vw;
+            font-size: 1.5vw;
+            border-radius: 0.5vw;
+            cursor: pointer;
+            box-shadow: none;
+            box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.4);
+        }
+        &-promocode {
+            font-weight: 400;
+            line-height: 125%;
+            text-align: center;
+            color: #006270;
+            border: 1px solid #006270;
+            background: 0;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .offer {
+        &__bg {
+            width: 100vw;
+        }
+        &__subtitle {
+            margin-bottom: 78px;
+        }
+        &__point {
+            display: none;
+        }
+        &__card {
+            padding: 7px;
+            width: 184px;
+            border-radius: 15px;
+            box-shadow: 0vw 8px 10px rgba(0, 0, 0, 0.3);
+            &1 {
+                left: 40%;
+                transform: translateX(-50%) rotate(-15deg);
+            }
+            &2 {
+                bottom: auto;
+                top: -15%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &3 {
+                left: 60%;
+                transform: translateX(-50%) rotate(15deg);
+            }
+            &-img {
+                width: 169px;
+                height: 107px;
+                border-radius: 12px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                margin-bottom: 2px;
+            }
+            &-title {
+                font-size: 13px;
+                margin-bottom: 2px;
+            }
+            &-subtitle {
+                font-size: 11px;
+                margin-bottom: 5px;
+            }
+            &-promocode, &-more {
+                margin: 0 2px;
+                width: 60px;
+                height: 20px;
+                font-size: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+}
