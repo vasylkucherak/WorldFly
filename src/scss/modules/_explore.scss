@@ -1,5 +1,5 @@
 .explore {
-    padding: 50vw  0 100px 0;
+    padding: calc(80vh - 171px) 0 150px 0;
     z-index: 2;
     &-tabs {
         position: relative;
@@ -143,6 +143,7 @@
 }
 @media (max-width: 767px) {
     .explore {
+        padding: calc(80vh - 428px) 0 150px 0;
         &-tabs {
             &__block {
                 form {

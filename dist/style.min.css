@@ -173,7 +173,6 @@ main {
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  background-color: #2A3950;
   font-family: "SegoeUI";
   font-weight: 400;
 }
@@ -226,17 +225,12 @@ main {
 .parallax {
   min-height: 100vh;
 }
-.parallax.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 .parallax__field {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 400vh;
+  height: 500vh;
   z-index: 2;
 }
 .parallax__body {
@@ -253,6 +247,7 @@ main {
   height: 110%;
   bottom: -5%;
   left: -5%;
+  background-color: #2A3950;
 }
 .parallax__images__item, .parallax .img-parallax__item {
   position: absolute;
@@ -260,7 +255,8 @@ main {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
+  background-color: transparent;
 }
 .parallax__images__bg, .parallax__images__cloud1, .parallax__images__cloud2, .parallax__images__cloud3, .parallax__images__back1, .parallax__images__back2, .parallax__images__middle1, .parallax__images__middle2, .parallax__images__middle3, .parallax__images__lake, .parallax__images__front, .parallax .img-parallax__bg, .parallax .img-parallax__cloud1, .parallax .img-parallax__cloud2, .parallax .img-parallax__cloud3, .parallax .img-parallax__back1, .parallax .img-parallax__back2, .parallax .img-parallax__middle1, .parallax .img-parallax__middle2, .parallax .img-parallax__middle3, .parallax .img-parallax__lake, .parallax .img-parallax__front {
   position: absolute;
@@ -269,6 +265,8 @@ main {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 2;
+  background-color: transparent;
 }
 .parallax__images__bottom-bg, .parallax .img-parallax__bottom-bg {
   position: absolute;
@@ -542,7 +540,7 @@ body._touch .menu__link {
 }
 
 .explore {
-  padding: 50vw 0 100px 0;
+  padding: calc(80vh - 171px) 0 150px 0;
   z-index: 2;
 }
 .explore-tabs {
@@ -682,6 +680,9 @@ body._touch .menu__link {
 }
 
 @media (max-width: 767px) {
+  .explore {
+    padding: calc(80vh - 428px) 0 150px 0;
+  }
   .explore-tabs__block form {
     flex-wrap: wrap;
   }
@@ -729,7 +730,7 @@ body._touch .menu__link {
 }
 .second {
   position: relative;
-  margin: 250px 0px;
+  padding: 200px 0px;
   background-color: #2A3950;
   z-index: 2;
 }
@@ -800,7 +801,7 @@ body._touch .menu__link {
 }
 .offer {
   position: relative;
-  padding: 100px 0;
+  margin: 100px 0;
   background: #2A3950;
 }
 .offer__map {

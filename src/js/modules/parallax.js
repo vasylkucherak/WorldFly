@@ -61,28 +61,21 @@ export default function parallax() {
         setMouseParallax();
 
         document.addEventListener('mousemove', function(e) {
-            if (document.documentElement.scrollTop < 1000) {
-                const parallaxWidth = parallax.offsetWidth;
-                const parallaxHeight = parallax.offsetHeight;
+            const parallaxWidth = parallax.offsetWidth;
+            const parallaxHeight = parallax.offsetHeight;
 
-                const coordX = e.pageX - parallaxWidth / 2;
-                const coordY = e.pageY - parallaxHeight / 2;
+            const coordX = e.pageX - parallaxWidth / 2;
+            const coordY = e.pageY - parallaxHeight / 2;
 
-                coordXprocent = coordX / parallaxWidth * 100;
-                coordYprocent = coordY / parallaxHeight * 100;
-            }
+            coordXprocent = coordX / parallaxWidth * 100;
+            coordYprocent = coordY / parallaxHeight * 100;
         });
 
         // Parallax on scroll
 
         document.addEventListener('scroll', function(e) {
-            if (document.documentElement.scrollTop < 1800) {
-                const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
-                setScrollParallax(scrollTopProcent);
-                parallax.classList.remove('hidden');
-            } else {
-                parallax.classList.add('hidden');
-            }
+            const scrollTopProcent = window.scrollY / parallax.offsetHeight * 100;
+            setScrollParallax(scrollTopProcent);
         });
 
         function setScrollParallax(scrollTopProcent) {
