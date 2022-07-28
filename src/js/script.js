@@ -4,8 +4,8 @@ import burger from "./modules/burger.js";
 import pcOrMobile from "./modules/pcOrMobile.js";
 import parallax from "./modules/parallax.js";
 import exploreTabs from "./modules/exploreTabs.js";
-//import popularSlider from "./modules/popularSlider.js";
-//import tourSlider from "./modules/tourSlider.js";
+import popularSlider from "./modules/popularSlider.js";
+import tourSlider from "./modules/tourSlider.js";
 import scrollOnLinks from "./modules/scrollOnLinks.js";
 
 window.onload = function() {
@@ -15,10 +15,10 @@ window.onload = function() {
     pcOrMobile();
     parallax();
     exploreTabs();
-    //popularSlider();
-    //tourSlider();
+    popularSlider();
+    tourSlider();
     scrollOnLinks({
         linksAttribue: '[href^="#"]',
-        scrollSpeed: 1
+        scrollSpeed: 0.5
     });
 }

@@ -61,14 +61,16 @@ export default function parallax() {
         setMouseParallax();
 
         document.addEventListener('mousemove', function(e) {
-            const parallaxWidth = parallax.offsetWidth;
-            const parallaxHeight = parallax.offsetHeight;
+            if (document.documentElement.scrollTop < (bg.offsetHeight * 2)) {
+                const parallaxWidth = parallax.offsetWidth;
+                const parallaxHeight = parallax.offsetHeight;
 
-            const coordX = e.pageX - parallaxWidth / 2;
-            const coordY = e.pageY - parallaxHeight / 2;
+                const coordX = e.pageX - parallaxWidth / 2;
+                const coordY = e.pageY - parallaxHeight / 2;
 
-            coordXprocent = coordX / parallaxWidth * 100;
-            coordYprocent = coordY / parallaxHeight * 100;
+                coordXprocent = coordX / parallaxWidth * 100;
+                coordYprocent = coordY / parallaxHeight * 100;
+            }
         });
 
         // Parallax on scroll

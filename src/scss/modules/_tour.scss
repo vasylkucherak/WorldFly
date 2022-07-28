@@ -1,6 +1,8 @@
 .tour {
-    padding-bottom: 50px;
+    position: relative;
+    padding: 50px 0 150px 0;
     background: $purple-bg;
+    z-index: 1;
     &__subtitle {
         margin-bottom: 0;
     }

@@ -198,7 +198,7 @@ main {
   padding: 5px 10px 0 10px;
   margin-bottom: 15px;
   font-family: "DM Serif Display";
-  font-size: 40px;
+  font-size: calc(24px + ((100vw - 320px) / 1600 * 16));
   line-height: 112%;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -211,7 +211,7 @@ main {
   margin-bottom: 25px;
   width: calc(300px + ((100vw - 320px) / 1600 * 400));
   font-weight: 600;
-  font-size: 16px;
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 4));
   line-height: 24px;
   text-align: center;
   color: #ccc;
@@ -247,7 +247,7 @@ main {
   height: 110%;
   bottom: -5%;
   left: -5%;
-  background-color: #2A3950;
+  background-color: rgb(215, 255, 225);
 }
 .parallax__images__item, .parallax .img-parallax__item {
   position: absolute;
@@ -730,7 +730,8 @@ body._touch .menu__link {
 }
 .second {
   position: relative;
-  padding: 200px 0px;
+  margin-top: 100px;
+  padding: 300px 0;
   background-color: #2A3950;
   z-index: 2;
 }
@@ -801,7 +802,7 @@ body._touch .menu__link {
 }
 .offer {
   position: relative;
-  margin: 100px 0;
+  padding-bottom: 100px;
   background: #2A3950;
 }
 .offer__map {
@@ -973,8 +974,10 @@ body._touch .menu__link {
   }
 }
 .popular {
-  padding-bottom: 50px;
+  position: relative;
+  padding: 50px 0 150px 0;
   background: #2A3950;
+  z-index: 1;
 }
 .popular__slider {
   position: relative;
@@ -1088,8 +1091,10 @@ body._touch .menu__link {
 }
 
 .tour {
-  padding-bottom: 50px;
+  position: relative;
+  padding: 50px 0 150px 0;
   background: #2A3950;
+  z-index: 1;
 }
 .tour__subtitle {
   margin-bottom: 0;
@@ -1275,7 +1280,9 @@ body._touch .menu__link {
 }
 
 .join {
-  padding-top: 5vw;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
   padding-bottom: 100px;
   background: #2A3950;
 }
@@ -1322,50 +1329,51 @@ body._touch .menu__link {
 }
 .join__panel {
   padding: 3%;
+  padding-bottom: calc(70px + ((100vw - 320px) / 1600 * 30));
   position: relative;
   width: 100%;
-  height: 20vw;
   z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .join__panel-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 2vw;
   z-index: -1;
 }
 .join__panel-subtitle {
-  font-size: 1vw;
+  width: 100%;
+  padding-left: calc(20px + ((100vw - 320px) / 1600 * 80));
+  padding-right: calc(20px + ((100vw - 320px) / 1600 * 80));
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 8));
   line-height: 125%;
+  margin-bottom: 0;
 }
 .join__panel form {
-  padding: 3%;
   position: absolute;
+  padding: 20px;
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 9.5vw;
+  height: calc(70px + ((100vw - 320px) / 1600 * 30));
+  display: flex;
 }
 .join__panel input {
   width: 100%;
   height: 100%;
-  font-size: 2vw;
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 8));
 }
 .join__panel input.email {
-  padding: 0 calc(22% + 1vw) 0 2%;
+  flex: 0 0 80%;
+  padding: 0 calc(20% + 10px) 0 10px;
 }
 .join__panel input.submit {
-  position: absolute;
-  bottom: 50%;
-  right: calc(3% + 0.5vw);
-  width: 20%;
-  height: 3.2vw;
-  transform: translateY(50%);
+  flex: 0 0 20%;
   border-radius: 0;
-  line-height: calc(3vw - 2px);
   box-shadow: none;
 }
 
@@ -1382,10 +1390,21 @@ body._touch .menu__link {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 767.98px) {
+  .footer__body .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .footer__body-row {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
+  max-width: 33%;
+}
+@media (max-width: 767.98px) {
+  .footer__body-row {
+    align-items: center;
+  }
 }
 .footer__body-row img {
   width: 70%;
@@ -1406,6 +1425,11 @@ body._touch .menu__link {
   text-decoration-line: underline;
   color: #FFFFFF;
 }
+@media (max-width: 400px) {
+  .footer__body-title {
+    font-size: 18px;
+  }
+}
 .footer__body-subtitle {
   margin-top: 15px;
   font-family: "Segoe UI";
@@ -1421,15 +1445,61 @@ body._touch .menu__link {
 .footer__body a:hover {
   color: rgb(0, 171, 230);
 }
+@media (max-width: 767.98px) {
+  .footer__body a {
+    text-align: center;
+  }
+}
+.footer__logo {
+  width: 30%;
+}
+.footer__logo p {
+  font-family: "Segoe UI";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+@media (max-width: 767.98px) {
+  .footer__logo {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+}
+.footer__links {
+  margin-left: 40px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 767.98px) {
+  .footer__links {
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
 .footer__nav {
   padding: 10px 0;
-  height: 50px;
+  min-height: 50px;
   background: #2A3950;
 }
 .footer__nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .footer__nav .container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
 }
 .footer__nav-social {
   display: flex;
@@ -1444,6 +1514,9 @@ body._touch .menu__link {
   margin-right: 25px;
   background: #00E0C7;
   border-radius: 3px;
+}
+.footer__nav-item:last-child {
+  margin-right: 0;
 }
 .footer__nav-item svg {
   fill: #2A3950;

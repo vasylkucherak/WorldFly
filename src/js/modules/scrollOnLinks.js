@@ -3,13 +3,19 @@
 export default function scrollOnLinks({linksAttribue = '[href^="#"]', scrollSpeed = 0.2}) {
 
     const links = document.querySelectorAll(linksAttribue); // або по [data-link]
-    const speed = scrollSpeed; // із збільшенням значення швидкість зменшується
-    
+    let speed;
+
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
         
         link.addEventListener('click', function(event) {
             event.preventDefault();
+
+            if (link.getAttribute('href') == '#explore') {
+                speed = 1.5;
+            } else {
+                speed = scrollSpeed;
+            }
 
             let widthTop = document.documentElement.scrollTop;
             let hash = this.hash;
