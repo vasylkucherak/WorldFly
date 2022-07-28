@@ -40,9 +40,6 @@
   font-weight: 600;
   font-style: normal;
 }
-/* h1 {
-    @include adaptiv-font(40, 24);
-} */
 @keyframes heartbeat {
   from {
     transform: scale(1);
@@ -88,7 +85,7 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 100%;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -133,6 +130,43 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+body {
+  font-family: "SegoeUI";
+  font-weight: 600;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1340px;
+  /* @media (max-width: $pc) {
+      max-width: 970px;
+  }
+  @media (max-width: $tablet) {
+      max-width: 750px;
+  } */
+}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+main {
+  flex: 1 1 auto;
+}
+
 .wrapper {
   position: relative;
   display: flex;
@@ -142,17 +176,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #2A3950;
   font-family: "SegoeUI";
   font-weight: 400;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 0 20px;
-}
-@media (max-width: 500px) {
-  .container {
-    padding: 0 10px;
-  }
 }
 
 .btn {
@@ -187,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 10px;
   margin-bottom: 25px;
-  max-width: 700px;
+  width: calc(300px + ((100vw - 320px) / 1600 * 400));
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -281,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 .header__logo {
-  height: 40px;
+  height: calc(40px + ((100vw - 320px) / 1600 * 32));
 }
 .header__logo img {
   height: 100%;
@@ -289,7 +312,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu, .header .menu {
   height: inherit;
   font-weight: 600;
-  font-size: 18px;
+  font-size: calc(16px + ((100vw - 320px) / 1600 * 10));
   line-height: 24px;
   height: inherit;
 }
@@ -323,10 +346,11 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 .header__btn {
-  width: 100px;
-  height: 30px;
+  height: calc(30px + ((100vw - 320px) / 1600 * 20));
   font-weight: 700;
-  font-size: 12px;
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 8));
+  padding-left: calc(20px + ((100vw - 320px) / 1600 * 24));
+  padding-right: calc(20px + ((100vw - 320px) / 1600 * 24));
   line-height: 125%;
   letter-spacing: 1px;
   text-align: center;
@@ -363,8 +387,10 @@ body._touch .menu__link {
 @media (max-width: 767px) {
   .header {
     padding: 10px 0;
+    min-width: 50px;
   }
   .header__logo {
+    height: 40px;
     position: absolute;
     top: -5px;
     left: 50%;
@@ -437,8 +463,9 @@ body._touch .menu__link {
     display: block;
   }
   .header__btn {
+    height: 30px;
     z-index: 5;
-    width: 70px;
+    padding: 0 10px;
   }
 
   .menu__burger span, .menu__burger::before, .menu__burger::after {
@@ -458,59 +485,52 @@ body._touch .menu__link {
 }
 .promo__content {
   margin: 50px auto;
-  padding: 0 20px;
+  margin-top: calc(50px + ((100vw - 320px) / 1600 * 32));
+  padding: 0 50px;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 60vw;
+  width: 100%;
   text-align: center;
 }
 .promo__title {
-  margin-bottom: 2vw;
+  margin-bottom: 20px;
   width: 100%;
-  font-size: 6vw;
+  font-size: calc(40px + ((100vw - 320px) / 1600 * 44));
   color: #006270;
   text-shadow: 0 0.6vw 0.2vw rgba(165, 165, 165, 0.2);
 }
 .promo__subtitle {
-  margin-bottom: 2vw;
-  width: 100%;
+  margin-bottom: calc(20px + ((100vw - 320px) / 1600 * 30));
   font-weight: 400;
-  font-size: 1.5vw;
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 12));
   line-height: 125%;
   color: #006270;
 }
 .promo__btn {
-  width: 18vw;
-  height: 5vw;
+  padding-top: calc(12px + ((100vw - 320px) / 1600 * 6));
+  padding-bottom: calc(12px + ((100vw - 320px) / 1600 * 6));
+  padding-left: calc(28px + ((100vw - 320px) / 1600 * 22));
+  padding-right: calc(28px + ((100vw - 320px) / 1600 * 22));
   background: #2A3950;
   box-shadow: 0 0.8vw 1vw rgba(0, 0, 0, 0.3);
   font-family: "Segoe UI";
   font-weight: 600;
-  font-size: 2vw;
+  font-size: calc(12px + ((100vw - 320px) / 1600 * 12));
   line-height: 125%;
   color: #FFF;
 }
 @media (max-width: 767px) {
   .promo__content {
-    max-width: 460px;
+    padding: 0 10px;
   }
   .promo__title {
     margin-bottom: 15px;
-    font-size: 46px;
-    text-shadow: 0 6px 2px rgba(165, 165, 165, 0.2);
   }
   .promo__subtitle {
-    margin-bottom: 15px;
-    font-size: 12px;
-  }
-  .promo__btn {
-    width: 138px;
-    height: 38px;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
-    font-size: 15px;
+    margin-bottom: 25px;
   }
 }
 

@@ -5,59 +5,52 @@
     min-height: 100vh;
     &__content {
         margin: 50px auto;
-        padding: 0 20px;
+        @include adaptiv-value("margin-top", 82, 50, 0);
+        padding: 0 50px;
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 60vw;
+        width: 100%;
         text-align: center;
     }
     &__title {
-        margin-bottom: 2vw;
+        margin-bottom: 20px;
         width: 100%;
-        font-size: 6vw;
+        @include adaptiv-value("font-size", 84, 40, 0);
         color: $dark-green;
         text-shadow: 0 .6vw .2vw rgba(165, 165, 165, 0.2);
     }
     &__subtitle {
-        margin-bottom: 2vw;
-        width: 100%;
+        @include adaptiv-value("margin-bottom", 50, 20, 0);
         font-weight: 400;
-        font-size: 1.5vw;
+        @include adaptiv-value("font-size", 24, 12, 0);
         line-height: 125%;
         color: $dark-green;
     }
     &__btn {
-        width: 18vw;
-        height: 5vw;
+        @include adaptiv-value("padding-top", 18, 12, 0);
+        @include adaptiv-value("padding-bottom", 18, 12, 0);
+        @include adaptiv-value("padding-left", 50, 28, 0);
+        @include adaptiv-value("padding-right", 50, 28, 0);
         background: $purple-bg;
         box-shadow: 0 .8vw 1vw rgba(0, 0, 0, 0.3);
         font-family: 'Segoe UI';
         font-weight: 600;
-        font-size: 2vw;
+        @include adaptiv-value("font-size", 24, 12, 0);
         line-height: 125%;
         color: #FFF;
     }
     @media (max-width: 767px) {
         &__content {
-            max-width: 460px;
+            padding: 0 10px;
         }
         &__title {
             margin-bottom: 15px;
-            font-size: 46px;
-            text-shadow: 0 6px 2px rgba(165, 165, 165, 0.2);
         }
         &__subtitle {
-            margin-bottom: 15px;
-            font-size: 12px;
-        }
-        &__btn {
-            width: 138px;
-            height: 38px;
-            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
-            font-size: 15px;
+            margin-bottom: 25px;
         }
     }
 }
